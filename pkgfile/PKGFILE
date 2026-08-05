@@ -15,6 +15,12 @@ md5sums=('SKIP')
 makedepends=()
 depends=(
 	fluxbox
+	polybar
+	scrot
+	xdotool
+	wmctrl
+	ImageMagick
+	i3lock
 	fbmenugen
 	cairo
 	galculator-gtk2
