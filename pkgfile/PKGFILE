@@ -119,7 +119,7 @@ depends=(
 	network-manager-applet
 
 	voidbr-base-config
-	#	voidbr-fluxbox-config
+	voidbr-fluxbox-config
 	voidbr-wallpapers
 	voidbr-tokyo-theme
 	voidbr-beauty-icons
