@@ -1,3 +1,6 @@
-# voidbr-pkgfile
+# voidbr-fluxbox
 
-Template for VoidBR pkgmake/pkgfile packages
+VoidBR FLUXBOXMeta Package
+
+
+

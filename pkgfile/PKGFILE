@@ -1,12 +1,11 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
 
-pkgname=voidbr-pkgname
-pkgdesc="Package template for VoidLinuxBR"
+pkgname=voidbr-fluxbox
+pkgdesc="VoidBR FLUXBOX Meta Package"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
-provides=()               # "eu SOU o $pkgname pkg1, pra quem depender deles"
-replaces=()               # "remove o pkg1 pkg2 antigo automaticamente quando eu instalar"
-conflicts=()              # "nunca me deixe coexistir com o pkg1 pkg2 original"
+provides=()
+replaces=()
 arch=('any')
 license=('MIT')
 #url="ssh://git@github.com/voidlinuxbr/${pkgname}"
@@ -14,30 +13,147 @@ url="https://github.com/voidlinuxbr/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
-depends=()
-backup=()
-
-# Automatically detect and use the correct install file
-if [ -e "${pkgname}.install" ]; then
-	install=${pkgname}.install
-elif [ -e "pkgbuild.install" ]; then
-	install=pkgfile.install
-fi
+depends=(
+	fluxbox
+	fbsetbg
+	picom
+	tint2
+	rofi
+	dunst
+	alacritty
+	thunar
+	thunar-volman
+	gvfs
+	udisks2
+	network-manager-applet
+	blueman
+	volumeicon
+	pavucontrol
+	polkit-gnome
+	nitrogen
+	flameshot
+	clipmenu
+	xclip
+	xsel
+	xdg-user-dirs
+	xdg-utils
+	lxappearance
+	qt5ct
+	qt6ct
+	kvantum
+	papirus-icon-theme
+	adwaita-icon-theme
+	bibata-cursor-theme
+	jetbrains-mono-ttf
+	inter-font
+	noto-fonts-ttf
+	noto-fonts-emoji
+	font-awesome6
+	starship
+	zsh
+	btop
+	mpv
+	feh
+	####################################
+	sddm               # QML based X11 display manager
+	voidbr-sddm-themes # sddm Themes for VoidLinuxBR
+	wofi               # Lançador de aplicativos e menu de busca
+	#rofi                  # Window switcher, run dialog and dmenu replacement
+	xdg-desktop-portal     # Camada de comunicação entre apps e o desktop
+	xdg-desktop-portal-gtk # Implementação GTK do portal XDG
+	xdg-user-dirs          # Tool to help manage user directories
+	xdg-user-dirs-gtk      # GTK+ tool to help manage user directories
+	mpv                    # Video player based on MPlayer/mplayer2
+	#
+	cliphist      # Histórico da área de transferência
+	dunst         # Lightweight and customizable notification daemon
+	grim          # Utilitário para captura de tela (screenshot)
+	mako          # Servidor de notificações Wayland
+	slurp         # Seleção de área para captura de tela
+	swappy        # Wayland native snapshot editing tool, inspired by Snappy on macOS
+	wl-clipboard  # Ferramentas de clipboard (wl-copy/wl-paste)
+	brightnessctl # Controle de brilho via linha de comando
+	playerctl     # MPRIS command-line controller and library
+	qView         # Image viewer designed with minimalism and usability in mind
+	#
+	dbus           # Message bus system
+	elogind        # Gerenciador de login e sessões (seat management)
+	foot           # Terminal leve e otimizado para Wayland
+	eom            # Visualizador de imagens (Eye of MATE)
+	fuse-exfat     # Suporte para montagem de sistemas exFAT
+	ffmpeg         # Ferramentas para manipulação de áudio e vídeo
+	mesa-dri       # Drivers gráficos (Direct Rendering Infrastructure)
+	mesa-vaapi     # Aceleração de vídeo via hardware (VA-API)
+	mesa-demos     # Coleção de ferramentas de teste para o Mesa
+	psmisc         # Utilitários de processo (killall, fuser, pstree)
+	cpupower       # Ferramenta de gerenciamento de frequência da CPU
+	noto-fonts-ttf # Fontes Noto da Google
+	font-awesome   # Fontes de ícones para barras e interfaces
+	optipng        # Otimizador de compressão para arquivos PNG
+	sassc          # Compilador CSS (SASS)
+	jq             # Processador de arquivos JSON via CLI
+	#swaylock                # Bloqueador de tela para Wayland
+	#swayidle                # Gerenciador de inatividade (idle) e bloqueio
+	#sway-audio-idle-inhibit # Inibe o bloqueio/hibernação durante reprodução de áudio
+	wmenu     # Menu de seleção estilo dmenu/wofi para Wayland
+	xdg-utils # Ferramentas de integração com a área de trabalho
+	#xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
+	rtkit                 # Gerenciamento de prioridade de tempo real
+	mate-polkit           # Agente de autenticação para permissões root
+	mate-calc             # Calculadora do ambiente MATE
+	kanshi                # Gerenciador dinâmico de monitores
+	Thunar                # Gerenciador de arquivos (XFCE)
+	thunar-archive-plugin # Integração de compactação no Thunar
+	engrampa              # Gerenciador de arquivos compactados
+	pluma                 # Editor de texto leve (MATE)
+	atril                 # Visualizador de documentos (PDFs)
+	pipewire              # Servidor de áudio moderno
+	wireplumber           # Gerenciador de sessão para PipeWire
+	pavucontrol           # Volume control applet for Pipewire
+	alsa-pipewire
+	pulseaudio-utils
+	libspa-bluetooth
+	libjack-pipewire
+	alsa-plugins-pulseaudio
+	alsa-utils
+	xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment
+	NetworkManager          # Gerenciador de rede (daemon)
+	network-manager-applet  # Ícone de bandeja para controlar conexões
+	voidbr-base-config      # Configuração base personalizada
+#	voidbr-fluxbox-config   # Configuração base personalizada
+	voidbr-wallpapers       # Wallpapers for Void Linux BR
+	voidbr-tokyo-theme      # TokyoNight-Dark theme with icons, cursors, and wallpaper
+	voidbr-beauty-icons
+	firefox                 # Mozilla Firefox web browser
+	firefox-i18n-pt-BR      # Firefox Portuguese (Brazilian) language pack
+	# nerd-fonts            # Iconic font aggregator collection
+	ttf-jetbrains-mono-nerd # Patched font JetBrains Mono from nerd fonts library
+	ttf-ubuntu-font-family  # Ubuntu font family
+	lm_sensors              # Utilities to read temperature/voltage/fan sensors
+	acpi                    # Informations about ACPI devices (battery, thermal sensors and power)
+	acpid                   # ACPI Daemon (acpid) With Netlink Support
+	htop                    # Interactive process viewer
+	nwg-look                # Configurador de temas GTK para Wayland
+	nwg-bar                 # GTK3-based button bar for wlroots-based compositors
+	nwg-launchers           # GTK-based launchers for window managers
+	gnome-system-monitor    # Process viewer and system resource monitor for GNOME
+	kitty                   # Modern, hackable, featureful, OpenGL based terminal emulator
+	gnome-keyring           # GNOME password and secret manager
+	qt5ct                   # Qt5 Configuration Tool
+	qt6ct                   # Qt6 Configuration Tool
+)
 
 package() {
 	# Verify default folder
-  if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
+	if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}/${pkgname}"
-  elif [ -d "${srcdir}/${pkgname}" ]; then
-		InternalDir="${srcdir}/${pkgname}"
 	else
-    #local
-		InternalDir="${WORKDIR}"
+		InternalDir="${srcdir}/${pkgname}"
 	fi
 
-	cd "${InternalDir}"
+	cd "${srcdir}/${pkgname}"
 	# Copiar a estrutura de /etc, /usr e /opt para /
-	local dirs=("boot" "etc" "opt" "usr" "var")
+	local dirs=("boot" "etc" "opt" "usr")
 	for dir in "${dirs[@]}"; do
 		if [ -d "${InternalDir}/${dir}" ]; then
 			cp -a "${InternalDir}/${dir}" "${pkgdir}/"
@@ -60,6 +176,13 @@ pre_install() {
 }
 
 post_install() {
+	log "Ativando serviços"
+
+	ln -sf /etc/sv/dbus /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/elogind /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/NetworkManager /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/rtkit /var/service/ 2>/dev/null || true
+
 	log "Finalizando instalação"
 }
 
