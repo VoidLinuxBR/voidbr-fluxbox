@@ -15,14 +15,30 @@ md5sums=('SKIP')
 makedepends=()
 depends=(
 	fluxbox
-	fbsetbg
+	fbmenugen
+	cairo
+	galculator-gtk2
+	gtk2-engines
+	gtk-engine-murrine
+	wicd
+	qt5ct
+	qt6ct
+	qt5-styleplugins
+	leafpad
+	dconf
+	volumeicon
+	feh
+	viewnior
+	compton
+	ffmpegthumbnailer
 	picom
 	tint2
 	rofi
 	dunst
 	alacritty
-	thunar
+	Thunar
 	thunar-volman
+	thunar-archive-plugin # Integração de compactação no Thunar
 	gvfs
 	udisks2
 	network-manager-applet
@@ -43,9 +59,7 @@ depends=(
 	kvantum
 	papirus-icon-theme
 	adwaita-icon-theme
-	bibata-cursor-theme
-	jetbrains-mono-ttf
-	inter-font
+	font-inter
 	noto-fonts-ttf
 	noto-fonts-emoji
 	font-awesome6
@@ -98,34 +112,32 @@ depends=(
 	wmenu     # Menu de seleção estilo dmenu/wofi para Wayland
 	xdg-utils # Ferramentas de integração com a área de trabalho
 	#xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
-	rtkit                 # Gerenciamento de prioridade de tempo real
-	mate-polkit           # Agente de autenticação para permissões root
-	mate-calc             # Calculadora do ambiente MATE
-	kanshi                # Gerenciador dinâmico de monitores
-	Thunar                # Gerenciador de arquivos (XFCE)
-	thunar-archive-plugin # Integração de compactação no Thunar
-	engrampa              # Gerenciador de arquivos compactados
-	pluma                 # Editor de texto leve (MATE)
-	atril                 # Visualizador de documentos (PDFs)
-	pipewire              # Servidor de áudio moderno
-	wireplumber           # Gerenciador de sessão para PipeWire
-	pavucontrol           # Volume control applet for Pipewire
+	rtkit       # Gerenciamento de prioridade de tempo real
+	mate-polkit # Agente de autenticação para permissões root
+	mate-calc   # Calculadora do ambiente MATE
+	kanshi      # Gerenciador dinâmico de monitores
+	engrampa    # Gerenciador de arquivos compactados
+	pluma       # Editor de texto leve (MATE)
+	atril       # Visualizador de documentos (PDFs)
+	pipewire    # Servidor de áudio moderno
+	wireplumber # Gerenciador de sessão para PipeWire
+	pavucontrol # Volume control applet for Pipewire
 	alsa-pipewire
 	pulseaudio-utils
 	libspa-bluetooth
 	libjack-pipewire
 	alsa-plugins-pulseaudio
 	alsa-utils
-	xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment
-	NetworkManager          # Gerenciador de rede (daemon)
-	network-manager-applet  # Ícone de bandeja para controlar conexões
-	voidbr-base-config      # Configuração base personalizada
-#	voidbr-fluxbox-config   # Configuração base personalizada
-	voidbr-wallpapers       # Wallpapers for Void Linux BR
-	voidbr-tokyo-theme      # TokyoNight-Dark theme with icons, cursors, and wallpaper
+	xfce4-terminal         # Modern terminal emulator primarly for the Xfce desktop environment
+	NetworkManager         # Gerenciador de rede (daemon)
+	network-manager-applet # Ícone de bandeja para controlar conexões
+	voidbr-base-config     # Configuração base personalizada
+	#	voidbr-fluxbox-config   # Configuração base personalizada
+	voidbr-wallpapers  # Wallpapers for Void Linux BR
+	voidbr-tokyo-theme # TokyoNight-Dark theme with icons, cursors, and wallpaper
 	voidbr-beauty-icons
-	firefox                 # Mozilla Firefox web browser
-	firefox-i18n-pt-BR      # Firefox Portuguese (Brazilian) language pack
+	firefox            # Mozilla Firefox web browser
+	firefox-i18n-pt-BR # Firefox Portuguese (Brazilian) language pack
 	# nerd-fonts            # Iconic font aggregator collection
 	ttf-jetbrains-mono-nerd # Patched font JetBrains Mono from nerd fonts library
 	ttf-ubuntu-font-family  # Ubuntu font family
