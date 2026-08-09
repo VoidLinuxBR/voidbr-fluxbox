@@ -14,6 +14,9 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
 depends=(
+	voidbr-base-common
+	voidbr-xorg-common
+	voidbr-gui-common
 	fluxbox
 	polybar
 	scrot
@@ -27,15 +30,12 @@ depends=(
 	gtk2-engines
 	gtk-engine-murrine
 	wicd
-	qt5ct
-	qt6ct
 	qt5-styleplugins
 	leafpad
 	dconf
 	volumeicon
 	feh
 	viewnior
-	compton
 	ffmpegthumbnailer
 	picom
 	tint2
@@ -45,99 +45,25 @@ depends=(
 	Thunar
 	thunar-volman
 	thunar-archive-plugin # Integração de compactação no Thunar
-	gvfs
-	udisks2
-	blueman
-	pavucontrol
 	polkit-gnome
 	nitrogen
 	flameshot
 	clipmenu
 	xclip
 	xsel
-	xdg-user-dirs
-	xdg-utils
 	lxappearance
 	kvantum
-	papirus-icon-theme
-	adwaita-icon-theme
 	font-inter
-	noto-fonts-ttf
-	noto-fonts-emoji
 	font-awesome6
 	starship
 	zsh
 	btop
-	mpv
-	####################################
-	sddm               # QML based X11 display manager
-	voidbr-sddm-themes # SDDM Themes for VoidLinuxBR
-
-	xdg-desktop-portal
-	xdg-desktop-portal-gtk
-	xdg-user-dirs-gtk
-
-	brightnessctl
-	playerctl
 	qView
-
-	dbus
-	elogind
-	eom
-	fuse-exfat
-	ffmpeg
-	mesa-dri
-	mesa-vaapi
-	mesa-demos
-	psmisc
-	cpupower
-	font-awesome
-	optipng
-	sassc
-	jq
-
-	rtkit
-	mate-polkit
-	mate-calc
-
 	engrampa
 	pluma
 	atril
-
-	pipewire
-	wireplumber
-	alsa-pipewire
-	pulseaudio-utils
-	libspa-bluetooth
-	libjack-pipewire
-	alsa-plugins-pulseaudio
-	alsa-utils
-
-	xfce4-terminal
-
-	NetworkManager
-	network-manager-applet
-
-	voidbr-base-config
 	voidbr-fluxbox-config
-	voidbr-wallpapers
-	voidbr-tokyo-theme
-	voidbr-beauty-icons
-
-	firefox
-	firefox-i18n-pt-BR
-
-	ttf-jetbrains-mono-nerd
-	ttf-ubuntu-font-family
-
-	lm_sensors
-	acpi
-	acpid
-	htop
-
 	gnome-system-monitor
-	kitty
-	gnome-keyring
 )
 
 package() {

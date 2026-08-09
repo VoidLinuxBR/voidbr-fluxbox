@@ -1,6 +1,6 @@
 # voidbr-fluxbox
 
-VoidBR FLUXBOXMeta Package
+VoidBR FLUXBOX Meta Package
 
 
 
