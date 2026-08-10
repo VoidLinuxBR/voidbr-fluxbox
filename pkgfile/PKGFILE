@@ -99,14 +99,16 @@ pre_install() {
 }
 
 post_install() {
-	log "Ativando serviços"
+  log "Aplicando configuracoes para $user"
+  # cd $user_home
+  # cp -Rpa /etc/skel/. .
+  # chown $user:$user . -R
+  voidbr-copy-skel-inc --user $user --force --quiet
 
-	ln -sf /etc/sv/dbus /var/service/ 2>/dev/null || true
-	ln -sf /etc/sv/elogind /var/service/ 2>/dev/null || true
-	ln -sf /etc/sv/NetworkManager /var/service/ 2>/dev/null || true
-	ln -sf /etc/sv/rtkit /var/service/ 2>/dev/null || true
+  log "Ativando serviços"
+  vservice add sddm --quiet
 
-	log "Finalizando instalação"
+  log "Finalizando instalação"
 }
 
 pre_upgrade() {
