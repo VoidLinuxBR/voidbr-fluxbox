@@ -14,6 +14,7 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
 depends=(
+	voidbr-base-config
 	voidbr-base-common
 	voidbr-xorg-common
 	voidbr-gui-common
@@ -40,30 +41,26 @@ depends=(
 	picom
 	tint2
 	rofi
-	dunst
+	mako
 	alacritty
 	Thunar
 	thunar-volman
-	thunar-archive-plugin # Integração de compactação no Thunar
-	polkit-gnome
-	nitrogen
+	thunar-archive-plugin # Integração de compactação no Thunar 
+	polkit-gnome nitrogen
 	flameshot
 	clipmenu
 	xclip
 	xsel
-	lxappearance
 	kvantum
 	font-inter
 	font-awesome6
-	starship
-	zsh
-	btop
+  #starship
 	qView
 	engrampa
 	pluma
 	atril
+	voidbr-base-common
 	voidbr-fluxbox-config
-	gnome-system-monitor
 )
 
 package() {
