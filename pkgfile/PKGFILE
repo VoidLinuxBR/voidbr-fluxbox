@@ -59,6 +59,9 @@ depends=(
 	pluma
 	atril
 	voidbr-fluxbox-config
+  nwg-bar                 # GTK3-based button bar for wlroots-based compositors
+  nwg-launchers           # GTK-based launchers for window managers
+  nwg-look                # GTK settings editor adapted to work in the wlroots environment
 )
 
 package() {
