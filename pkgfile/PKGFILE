@@ -107,7 +107,7 @@ post_install() {
   vservice add sddm --quiet
 
   log "Finalizando instalação"
-  log "${yellow}Instalação completa. Reinicie o sistema...${reset}"
+  log "${YELLOW}Instalação completa. Reinicie o sistema...${RESET}"
 }
 
 pre_upgrade() {
