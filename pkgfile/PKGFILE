@@ -14,7 +14,6 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
 depends=(
-	voidbr-base-config
 	voidbr-base-common
 	voidbr-xorg-common
 	voidbr-gui-common
@@ -59,7 +58,6 @@ depends=(
 	engrampa
 	pluma
 	atril
-	voidbr-base-common
 	voidbr-fluxbox-config
 )
 
