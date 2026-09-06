@@ -102,8 +102,10 @@ post_install() {
     voidbr-copy-skel-inc --user "$user" --force --quiet || true
   fi
 
-  log "Ativando serviços"
-  vservice add sddm --quiet || true
+  if [ -z "${VOIDBR_INSTALLER:-}" ]; then
+    log "Ativando serviços"
+    vservice add sddm --quiet || true
+  fi
 
   log "Finalizando instalação"
   log "${YELLOW}Instalação completa. Reinicie o sistema...${RESET}"
