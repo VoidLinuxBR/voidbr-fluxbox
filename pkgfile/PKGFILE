@@ -99,11 +99,11 @@ pre_install() {
 post_install() {
   if [ -n "$user" ] ; then
     log "Aplicando configuracoes para $user"
-    voidbr-copy-skel-inc --user "$user" --force --quiet
+    voidbr-copy-skel-inc --user "$user" --force --quiet || true
   fi
 
   log "Ativando serviços"
-  vservice add sddm --quiet
+  vservice add sddm --quiet || true
 
   log "Finalizando instalação"
   log "${YELLOW}Instalação completa. Reinicie o sistema...${RESET}"
