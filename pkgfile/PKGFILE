@@ -63,18 +63,22 @@ depends=(
 	nwg-launchers # GTK-based launchers for window managers
 	nwg-look      # GTK settings editor adapted to work in the wlroots environment
 )
+backup=()
 
 package() {
 	# Verify default folder
 	if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}/${pkgname}"
-	else
+	elif [ -d "${srcdir}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}"
+	else
+		#local
+		InternalDir="${WORKDIR}"
 	fi
 
-	cd "${srcdir}/${pkgname}"
+	cd "${InternalDir}"
 	# Copiar a estrutura de /etc, /usr e /opt para /
-	local dirs=("boot" "etc" "opt" "usr")
+	local dirs=("boot" "etc" "opt" "usr" "var")
 	for dir in "${dirs[@]}"; do
 		if [ -d "${InternalDir}/${dir}" ]; then
 			cp -a "${InternalDir}/${dir}" "${pkgdir}/"
@@ -82,14 +86,10 @@ package() {
 	done
 
 	# Install license file if present
-	if [ -f "LICENSE" ]; then
-		install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-	fi
-
+	[ -f "LICENSE" ] && install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 	# Install documentation if present
-	if [ -f "README.md" ]; then
-		install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-	fi
+	[ -f "README.md" ] && install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+
 }
 
 pre_install() {
